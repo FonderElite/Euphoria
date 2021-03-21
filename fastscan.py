@@ -40,13 +40,13 @@ def rust():
     ip_save = open('ip.txt','r')
     read = ip_save.read()
     #os.system('rustscan -a ' + read + ' -- -A -sV -sC --ulimit 5000')
-    sub.call(['rustscan','-a',read,'--','-A','-sV','-sC','--ulimit 5000'])
-    if os.path.exists('/usr/bin/rustscan') == False and os.path.isfile('rustscan_2.0.1_amd64.deb'):
-     slow_print2(wi + gr + '[+]' + wi + 'Unpacking rustscan_2.0.1_amd64.deb')
-     os.system('sudo dpkg -i rustscan_2.0.1_amd64.deb')
-     ip_saved = open('ip.txt','r')
-     readf = ip_saved.read()
-     #os.system('rustscan -a ' + readf + ' -- -A -sV -sC --ulimit 5000')
+    sub.call(['rustscan','-a',read,'--','-A','-sV','-sC','--ulimit 5000'])   
+   elif os.path.exists('/usr/bin/rustscan') == False and os.path.isfile('rustscan_2.0.1_amd64.deb'):
+    slow_print2(wi + gr + '[+]' + wi + 'Unpacking rustscan_2.0.1_amd64.deb')
+    os.system('sudo dpkg -i rustscan_2.0.1_amd64.deb')
+    ip_saved = open('ip.txt','r')
+    readf = ip_saved.read()
+    if os.path.exists('/usr/bin/rustscan') == True:
      sub.call(['rustscan','-a',read,'--','-A','-sV','-sC','--ulimit 5000'])
    else:
      slow_print2(wi + rd + '[+]' + wi + 'Done.')
