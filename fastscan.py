@@ -47,6 +47,24 @@ def vulnports(port):
       print(wi + gr + '[+]' + wi + 'Vulnerable port(s) Found!')
      elif vp[2] in data:
        print(wi + gr + '[+]' + wi + 'Vulnerable port(s) Found!')
+     elif vp[3] in data:
+       print(wi + gr + '[+]' + wi + 'Vulnerable port(s) Found!')
+     elif vp[4] in data:
+       print(wi + gr + '[+]' + wi + 'Vulnerable port(s) Found!')
+     elif vp[5] in data:
+       print(wi + gr + '[+]' + wi + 'Vulnerable port(s) Found!')
+     elif vp[6] in data:
+       print(wi + gr + '[+]' + wi + 'Vulnerable port(s) Found!')
+     elif vp[7] in data:
+       print(wi + gr + '[+]' + wi + 'Vulnerable port(s) Found!')
+     elif vp[8] in data:
+       print(wi + gr + '[+]' + wi + 'Vulnerable port(s) Found!')
+     elif vp[9] in data:
+       print(wi + gr + '[+]' + wi + 'Vulnerable port(s) Found!')
+     elif vp[10] in data:
+       print(wi + gr + '[+]' + wi + 'Vulnerable port(s) Found!')
+     elif vp[11] in data:
+       print(wi + gr + '[+]' + wi + 'Vulnerable port(s) Found!')
      else:
       print(wi + rd + '[-]' + wi + 'No Vulnerable port(s) Found. 🥺')
 def rust():
