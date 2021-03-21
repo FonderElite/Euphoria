@@ -53,6 +53,7 @@ def rust():
     if os.path.exists('/usr/bin/rustscan') == True:
      file = open('ip.txt','r')
      readip = file.read()
+     print(wi + gr + "[+]" + "IP to be scanned: " + readip)
      os.system('rustscan -b 1000 -a ' + readip + '-- -oN scan.txt') 
      readip.close()
     else:
