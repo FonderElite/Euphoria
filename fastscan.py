@@ -40,33 +40,11 @@ def vulnports(port):
    time.sleep(1.5)
    with open("scan.txt") as file: 
     data = file.read()
-    for port in data:
-     if vp[0] in data:
-      print(wi + gr + '[+]' + wi + 'Vulnerable port(s) Found!')
-     elif vp[1] in data:
-      print(wi + gr + '[+]' + wi + 'Vulnerable port(s) Found!')
-     elif vp[2] in data:
-       print(wi + gr + '[+]' + wi + 'Vulnerable port(s) Found!')
-     elif vp[3] in data:
-       print(wi + gr + '[+]' + wi + 'Vulnerable port(s) Found!')
-     elif vp[4] in data:
-       print(wi + gr + '[+]' + wi + 'Vulnerable port(s) Found!')
-     elif vp[5] in data:
-       print(wi + gr + '[+]' + wi + 'Vulnerable port(s) Found!')
-     elif vp[6] in data:
-       print(wi + gr + '[+]' + wi + 'Vulnerable port(s) Found!')
-     elif vp[7] in data:
-       print(wi + gr + '[+]' + wi + 'Vulnerable port(s) Found!')
-     elif vp[8] in data:
-       print(wi + gr + '[+]' + wi + 'Vulnerable port(s) Found!')
-     elif vp[9] in data:
-       print(wi + gr + '[+]' + wi + 'Vulnerable port(s) Found!')
-     elif vp[10] in data:
-       print(wi + gr + '[+]' + wi + 'Vulnerable port(s) Found!')
-     elif vp[11] in data:
-       print(wi + gr + '[+]' + wi + 'Vulnerable port(s) Found!')
+    for port in vp:
+     if port in data:
+      print(wi + gr + '[+]' + wi + 'Vulnerable port Found!' + '(' + port.uppercase() + ')' + '👾')
      else:
-      print(wi + rd + '[-]' + wi + 'No Vulnerable port(s) Found. 🥺')
+      print(wi + rd + '[-]' + wi + 'Vulnerable port:' + '(' + port + ')' + ' was not Found in the scan. 🥺')
 def rust():
   try:
    slow_print2(wi + yl + '[!]' + wi + 'Checking some dependencies...')
@@ -107,3 +85,4 @@ def rust():
   except:
    print(wi + rd + '[-]' + wi + 'Error.')
 rust()
+         
