@@ -89,5 +89,4 @@ def rust():
   except:
    print(wi + rd + '[-]' + wi + 'Error.')
 rust()
-#[+]Fast Vulnerability Scanner!
-#[+]Made By FonderElite && AbalesLuke!
+#Fast Vulnerability Scanner!
