@@ -110,5 +110,6 @@ def rust():
      slow_print2(wi + rd + '[+]' + wi + 'Done.')
   except:
    print(wi + rd + '[-]' + wi + 'Error.')
-rust()
+if __name__ == "__main__":
+    rust()
 #Fast Vulnerability Scanner!
