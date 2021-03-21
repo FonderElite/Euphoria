@@ -41,10 +41,12 @@ def vulnports(port):
    with open("scan.txt") as file: 
     data = file.read()
     for port in vp:
-     if port in data:
-      print(wi + gr + '[+]' + wi + 'Vulnerable port Found!' + '(' + port + ')' + '👾')
+     if port is not vp[1] and port in data:
+      print(wi + gr + '[+]' + wi + 'Vulnerable port Found!' + '(' + port + ')' + '👍')
+      if port == vp[1] in data:
+       print(wi + yl + 'Possible Vulnerable port: ' + '(' + port +')' + '')  
      else:
-      print(wi + rd + '[-]' + wi + 'Vulnerable port:' + '(' + port + ')' + ' was not Found in the scan. 🥺')
+      print(wi + rd + '[-]' + wi + 'Vulnerable port:' + '(' + port + ')' + ' was not Found in the scan. 👎')
 def rust():
   try:
    slow_print2(wi + yl + '[!]' + wi + 'Checking some dependencies...')
