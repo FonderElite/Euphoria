@@ -108,7 +108,9 @@ def rust():
      readip.close()
     else:
      slow_print2(wi + rd + '[+]' + wi + 'Done.')
-  except:
+  except Exception:
+    import pdb
+    pdb.set_trace()
    print(wi + rd + '[-]' + wi + 'Error.')
 if __name__ == "__main__":
     rust()
