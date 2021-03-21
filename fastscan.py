@@ -45,10 +45,11 @@ def rust():
     #sub.call(['rustscan','-a ',read,' --',' -sV',' -sC',' -A',' scan.txt'])
     print(wi + gr + "[+]" + wi + "IP to be scanned: " + read)
     ip = '172.217.31.238'
+    scan_ip = input(wi + yl + '[!]' + wi 'Input here the IP above: ')
     string = str(read)
     scan = 'rustscan -b 1000 -a '
     output = ' -- -oN scan.txt'
-    scanned =  scan  +  str(read) +  output
+    scanned =  scan  + scan_ip +  output
     os.system(scanned)
    elif os.path.exists('/usr/bin/rustscan') == False and os.path.isfile('rustscan_2.0.1_amd64.deb'):
     slow_print2(wi + gr + '[+]' + wi + 'Unpacking rustscan_2.0.1_amd64.deb')
@@ -59,9 +60,10 @@ def rust():
      file = open('ip.txt','r')
      readip = file.read()
      print(wi + gr + "[+]" + wi + "IP to be scanned: " + readip)
+     ip_to_scan =  input(wi + yl + '[!]' + wi 'Input here the IP above: ')
      scan = 'rustscan -b 1000 -a '
      output = ' -- -oN scan.txt'
-     scanned =  scan  +  readip +  output
+     scanned =  scan  +  ip_to_scan +  output
      os.system(scanned)
      readip.close()
     else:
