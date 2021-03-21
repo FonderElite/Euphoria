@@ -32,7 +32,17 @@ Yb,         ,ad8"
  slow_print(wi + yl + '----------------------')
 
 banner()
-
+def vulnports(port):
+  vp = ['ftp','ssh','telnet','netbios-ssn','dns','pop3','windows-rpc','mysql','http','smtp','msrpc',port]
+  if os.path.isfile('scan.txt') == True:
+   slow_print(wi + gr + '[+]' + wi + 'File saved as scan.txt')
+   print(wi + yl + '[!]' + wi + 'Checking for Vulnerable Ports...')
+   with open("scan.txt") as file: 
+    data = file.read()
+    if vp[0] in data:
+     print(wi + gr + '[+]' + wi + 'Vulnerable port(s) Found!')
+    else:
+     print('No Vulnerable port(s) Found. 🥺')
 def rust():
   try:
    slow_print2(wi + yl + '[!]' + wi + 'Checking some dependencies...')
@@ -51,6 +61,7 @@ def rust():
     output = ' -- -oN scan.txt'
     scanned =  scan  + scan_ip +  output
     os.system(scanned)
+    vulnports('ms-sql-s')
    elif os.path.exists('/usr/bin/rustscan') == False and os.path.isfile('rustscan_2.0.1_amd64.deb'):
     slow_print2(wi + gr + '[+]' + wi + 'Unpacking rustscan_2.0.1_amd64.deb')
     os.system('sudo dpkg -i rustscan_2.0.1_amd64.deb')
@@ -65,6 +76,7 @@ def rust():
      output = ' -- -oN scan.txt'
      scanned =  scan  +  ip_to_scan +  output
      os.system(scanned)
+     vulnports('ms-sql-s')
      readip.close()
     else:
      slow_print2(wi + rd + '[+]' + wi + 'Done.')
