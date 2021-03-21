@@ -90,7 +90,6 @@ function getBrowser() {
 
 $user_os        =   getOS();
 $user_browser   =   getBrowser();
-// Comming soon part --- Maybe :D 
 //$device_details =   "<strong>Browser: </strong>".$user_browser."<br /><strong>Operating System: </strong>".$user_os."";
 
 // Getting visitor IP address
