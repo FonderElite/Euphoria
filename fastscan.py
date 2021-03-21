@@ -50,7 +50,7 @@ def vulnports(port):
 def rust():
   try:
    slow_print2(wi + yl + '[!]' + wi + 'Checking some dependencies...')
-   if os.path.exists('/usr/bin/rustscan'):
+   if os.path.exists('/usr/bin/rustscan') == True and os.path.isfile('rustscan_2.0.1_amd64.deb') == True:
     slow_print(wi + gr + '[+]' + wi + 'No missing dependencies.')
     ip_save = open('ip.txt','r')
     read = ip_save.read()
@@ -66,6 +66,8 @@ def rust():
     scanned =  scan  + scan_ip +  output
     os.system(scanned)
     vulnports('ms-sql-s')
+   elif os.path.exists('/usr/bin/rustscan') == True and os.path.isfile('rustscan_2.0.1_amd64.deb') == False:
+    slow_print(wi + rd + '[-]' + wi + 'rustscan_2.0.1_amd64.deb is missing.')
    elif os.path.exists('/usr/bin/rustscan') == False and os.path.isfile('rustscan_2.0.1_amd64.deb'):
     slow_print2(wi + gr + '[+]' + wi + 'Unpacking rustscan_2.0.1_amd64.deb')
     os.system('sudo dpkg -i rustscan_2.0.1_amd64.deb')
