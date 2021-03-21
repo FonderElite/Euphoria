@@ -43,9 +43,9 @@ def vulnports(port):
     for port in data:
      if vp[0] in data:
       print(wi + gr + '[+]' + wi + 'Vulnerable port(s) Found!')
-    elif vp[1] in data:
+     elif vp[1] in data:
       print(wi + gr + '[+]' + wi + 'Vulnerable port(s) Found!')
-    elif vp[2] in data:
+     elif vp[2] in data:
        print(wi + gr + '[+]' + wi + 'Vulnerable port(s) Found!')
      else:
       print(wi + rd + '[-]' + wi + 'No Vulnerable port(s) Found. 🥺')
