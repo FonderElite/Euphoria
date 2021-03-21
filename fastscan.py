@@ -41,10 +41,10 @@ def vulnports(port):
    with open("scan.txt") as file: 
     data = file.read()
     for port in vp:
-     if port is not vp[1] and port in data:
+     if port in data:
       print(wi + gr + '[+]' + wi + 'Vulnerable port Found!' + '(' + port + ')' + '👍')
       if port == vp[1] in data:
-       print(wi + yl + '[!]' + wi + 'Possible Vulnerable port: ' + '(' + port +')' + '')  
+       print(wi + yl + '[!]' + wi + 'Possible Vulnerable port: ' + '(' + port +')' + '[XSS,SQLi,XXE,CSRF etc...]')  
      else:
       print(wi + rd + '[-]' + wi + 'Vulnerable port:' + '(' + port + ')' + ' was not Found in the scan. 👎')
 def rust():
@@ -89,4 +89,5 @@ def rust():
   except:
    print(wi + rd + '[-]' + wi + 'Error.')
 rust()
-#Fast Vulnerability Scanner!
+#[+]Fast Vulnerability Scanner!
+#[+]Made By FonderElite && AbalesLuke!
