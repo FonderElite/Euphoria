@@ -33,7 +33,7 @@ Yb,         ,ad8"
 
 banner()
 def vulnports(port):
-  vp = ['ftp','ssh','telnet','netbios-ssn','dns','pop3','windows-rpc','mysql','http','smtp','msrpc',port]
+  vp = ['http','https','ftp','ssh','telnet','netbios-ssn','dns','pop3','windows-rpc','mysql','smtp','msrpc',port]
   if os.path.isfile('scan.txt') == True:
    slow_print(wi + gr + '[+]' + wi + 'File saved as scan.txt')
    print(wi + yl + '[!]' + wi + 'Checking for Vulnerable Ports...')
@@ -44,7 +44,7 @@ def vulnports(port):
      if port is not vp[1] and port in data:
       print(wi + gr + '[+]' + wi + 'Vulnerable port Found!' + '(' + port + ')' + '👍')
       if port == vp[1] in data:
-       print(wi + yl + 'Possible Vulnerable port: ' + '(' + port +')' + '')  
+       print(wi + yl + '[!]' + wi + 'Possible Vulnerable port: ' + '(' + port +')' + '')  
      else:
       print(wi + rd + '[-]' + wi + 'Vulnerable port:' + '(' + port + ')' + ' was not Found in the scan. 👎')
 def rust():
