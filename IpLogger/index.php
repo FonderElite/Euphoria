@@ -1,5 +1,5 @@
 <?php
-include 'Ip-logger.php';
+include 'ip.php';
 header('Location: index.html');
 exit
 ?>
