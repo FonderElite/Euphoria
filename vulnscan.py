@@ -69,7 +69,7 @@ def vulnports(port):
        print(wi + yl + '[!]' + wi + 'Possible Vulnerable port: ' + '(' + port +')' + '[XSS,SQLi,XXE,CSRF etc...]')  
      else:
       print(wi + rd + '[-]' + wi + 'Vulnerable port:' + '(' + port + ')' + ' was not Found in the scan. 👎')
-def rust():
+def main():
   try:
    slow_print2(wi + yl + '[!]' + wi + 'Checking some dependencies...')
    if os.path.exists('/usr/bin/rustscan') == True and os.path.isfile('rustscan_2.0.1_amd64.deb') == True:
@@ -113,5 +113,5 @@ def rust():
     pdb.set_trace()
    print(wi + rd + '[-]' + wi + 'Error.')
 if __name__ == "__main__":
-    rust()
+    main()
 #Fast Vulnerability Scanner!
