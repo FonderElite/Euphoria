@@ -1,4 +1,4 @@
-import os,sys,platform,time
+import os,sys,platform,time,re
 from colorama import Fore
 import subprocess as sub
 wi="\033[1;37m" #>>White#
@@ -76,10 +76,11 @@ def main():
     slow_print(wi + gr + '[+]' + wi + 'No missing dependencies.')
     ip_save = open('ip.txt','r')
     read = ip_save.read()
+    IP = re.findall(r'(?:[\d]{1,3})\.(?:[\d]{1,3})\.(?:[\d]{1,3})\.(?:[\d]{1,3})', read)
     #os.system('rustscan -a ' + read + ' -- -A -sV -sC --ulimit 5000')
     #os.system('rustscan -a ' + read + ' -- -sV -sC -A -oN scan.txt')
     #sub.call(['rustscan','-a ',read,' --',' -sV',' -sC',' -A',' scan.txt'])
-    print(wi + gr + "[+]" + wi + "IP to be scanned: " + read)
+    print(wi + gr + "[+]" + wi + "IP to be scanned: " + str(IP))
     ip = '172.217.31.238'
     scan_ip = input(wi + yl + '[!]' + wi + 'Input here the IP above: ')
     string = str(read)
@@ -98,7 +99,8 @@ def main():
     if os.path.exists('/usr/bin/rustscan') == True:
      file = open('ip.txt','r')
      readip = file.read()
-     print(wi + gr + "[+]" + wi + "IP to be scanned: " + readip)
+     IPs = re.findall(r'(?:[\d]{1,3})\.(?:[\d]{1,3})\.(?:[\d]{1,3})\.(?:[\d]{1,3})', readip)
+     print(wi + gr + "[+]" + wi + "IP to be scanned: " + str(IPs))
      ip_to_scan =  input(wi + yl + '[!]' + wi + 'Input here the IP above: ')
      scan = 'rustscan -b 1000 -a '
      output = ' -- -oN scan.txt'
@@ -109,8 +111,8 @@ def main():
     else:
      slow_print2(wi + rd + '[+]' + wi + 'Done.')
   except Exception:
-    import pdb
-    pdb.set_trace()
+   import pdb
+   pdb.set_trace()
    print(wi + rd + '[-]' + wi + 'Error.')
 if __name__ == "__main__":
     main()
