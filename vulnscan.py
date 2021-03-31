@@ -10,7 +10,7 @@ def  slow_print(s):
         sys.stdout.write(c)
         sys.stdout.flush()
         time.sleep(6. / 100)
-def  slow_print2(s): 
+def  mid_print(s): 
     for c in s + '\n' :
         sys.stdout.write(c)
         sys.stdout.flush()
@@ -21,7 +21,7 @@ def  fast_print(s):
         sys.stdout.flush()
         time.sleep(2. / 100)
 def banner():
- slow_print2(wi + '''
+ mid_print(wi + '''
 The Internet is a worldwide platform for sharing information. It is a community of common interests. 
 No country is immune to such global challenges as cybercrime, 
 hacking, and invasion of privacy.
@@ -71,7 +71,7 @@ def vulnports(port):
       print(wi + rd + '[-]' + wi + 'Vulnerable port:' + '(' + port + ')' + ' was not Found in the scan. 👎')
 def main():
   try:
-   slow_print2(wi + yl + '[!]' + wi + 'Checking some dependencies...')
+   mid_print(wi + yl + '[!]' + wi + 'Checking some dependencies...')
    if os.path.exists('/usr/bin/rustscan') == True and os.path.isfile('rustscan_2.0.1_amd64.deb') == True:
     slow_print(wi + gr + '[+]' + wi + 'No missing dependencies.')
     ip_save = open('ip.txt','r')
@@ -92,7 +92,7 @@ def main():
    elif os.path.exists('/usr/bin/rustscan') == True and os.path.isfile('rustscan_2.0.1_amd64.deb') == False:
     slow_print(wi + rd + '[-]' + wi + 'rustscan_2.0.1_amd64.deb is missing.')
    elif os.path.exists('/usr/bin/rustscan') == False and os.path.isfile('rustscan_2.0.1_amd64.deb'):
-    slow_print2(wi + gr + '[+]' + wi + 'Unpacking rustscan_2.0.1_amd64.deb')
+    mid_print(wi + gr + '[+]' + wi + 'Unpacking rustscan_2.0.1_amd64.deb')
     os.system('sudo dpkg -i rustscan_2.0.1_amd64.deb')
     ip_saved = open('ip.txt','r')
     readf = ip_saved.read()
@@ -109,7 +109,7 @@ def main():
      vulnports('ms-sql-s')
      readip.close()
     else:
-     slow_print2(wi + rd + '[+]' + wi + 'Done.')
+     smid_print(wi + rd + '[+]' + wi + 'Done.')
   except Exception:
    import pdb
    pdb.set_trace()
